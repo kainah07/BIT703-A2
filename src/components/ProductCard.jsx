@@ -1,12 +1,22 @@
-function ProductCard({image, name, price, className}) {
+import ProductRating from "./ProductRating";
+
+function ProductCard({image, name, price, className, imageClassName, showRating = false}) {
   return (
     <article className={className}>
       <img src={image} 
         alt={name} 
-        className="w-full h-94 object-cover rounded-md"
+        className={`w-full object-cover rounded-md ${imageClassName}`}
       />
-      <h3 className="text-center font-light uppercase mt-4">{name}</h3>
-      <p className="text-center font-light">${price}</p>
+      
+      <div className={showRating ? "grid grid-cols-2 mt-4" : "text-center mt-4"}>
+        <div>
+          <h3 className="font-light uppercase">{name}</h3>
+          <p className="font-light">${price}</p>
+        </div>
+
+        {/* Display rating if showRating is true */}
+        {showRating && <ProductRating />}
+      </div>
     </article>
   )
 }

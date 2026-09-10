@@ -19,6 +19,7 @@ function FeaturedProducts() {
           name="Backpack" 
           price="300"
           className="flex-1" 
+          imageClassName="h-84"
         />
 
         <ProductCard 
@@ -26,6 +27,7 @@ function FeaturedProducts() {
           name="Hiking Boots" 
           price="150"
           className="flex-1"
+          imageClassName="h-84"
         />
 
          <button type="button" aria-label="Next products">
