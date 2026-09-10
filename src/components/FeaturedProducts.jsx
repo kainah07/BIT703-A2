@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 function FeaturedProducts() {
   return (
     <section className="p-5">
-      <h2 className="text-center text-4xl font-light mt-8 mb-8">Featured Products</h2>
+      <h2 className="text-center text-3xl md:text-4xl font-light mt-8 mb-8">Featured Products</h2>
 
       <div className="flex items-center gap-6 px-5 mb-8">
         <button type="button" aria-label="Previous products">

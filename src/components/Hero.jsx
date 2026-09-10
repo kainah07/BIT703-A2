@@ -6,7 +6,7 @@ import Button from './Button'
 function Hero() {
   return (
     <section className="p-5">
-      <h1 className="text-center text-3xl md:text-5xl font-light mt-2 md:mt-10 mb-10 md:mb-20">Gear Up for Your Next Adventure</h1>
+      <h1 className="text-center text-4xl md:text-5xl font-light mt-2 md:mt-10 mb-10 md:mb-20 mx-2">Gear Up for Your Next Adventure</h1>
       <hr className='w-45 md:w-64 mx-auto mb-5'/>
 
       <div className="flex flex-col md:flex-row items-center gap-7 p-6 justify-center">

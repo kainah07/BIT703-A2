@@ -12,7 +12,7 @@ function Header() {
 
         {/* Search */}
         <form>
-          <div className="flex items-center w-[325px] h-9 border px-2 gap-2">
+          <div className="flex items-center w-81.25 h-9 border px-2 gap-2">
             <span aria-hidden="true" className="material-symbols-outlined">
               search
             </span>
