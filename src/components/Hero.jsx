@@ -1,6 +1,7 @@
 import hero1 from '../assets/hero1.jpg'
 import hero2 from '../assets/hero2.jpg'
 import hero3 from '../assets/hero3.jpg'
+import Button from './Button'
 
 function Hero() {
   return (
@@ -14,11 +15,12 @@ function Hero() {
         <img src={hero3} alt="Hero Image 3" className="h-45 md:h-64 w-45 md:w-64 rounded-md"/>
       </div>
 
-      <button type="button" className="block mx-auto bg-gray-700
-       text-white px-6 md:px-10 py-2 md:py-3 mt-3 md:mt-6 rounded-md
-       hover:bg-gray-800 transition-colors duration-200">
-        Shop Now
-      </button>
+      <div className="flex justify-center mt-3 md:mt-6">
+        <Button>
+          Shop Now
+        </Button>
+      </div>
+      
     </section>
   )
 }
