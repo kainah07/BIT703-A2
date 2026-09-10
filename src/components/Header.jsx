@@ -33,8 +33,8 @@ function Header() {
         <button type="button" 
           className="flex items-center 
           bg-gray-700 text-white 
-          px-4 py-2 gap-2
-          hover:bg-gray-800"
+          px-4 py-2 gap-2 rounded-md
+          hover:bg-gray-800 transition-colors duration-200"
         >
           <span class="material-symbols-outlined cart-icon">shopping_cart</span>
 
