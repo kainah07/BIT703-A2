@@ -6,7 +6,7 @@ function Newsletter(){
       <h2 className="text-3xl md:text-4xl font-light mb-5 md:mb-0">Newsletter</h2>
 
       <div className="flex flex-col md:flex-row md:items-center justify-between">
-        <p className="mb-5 md:mb-0">Subscribe to our newsletter for the latest updates and offers.</p>
+        <p className="mb-5 text-gray-500 md:mb-0">Subscribe to our newsletter for the latest updates and offers.</p>
 
         <form>
           <div className="flex flex-col md:flex-row md:items-center gap-5">
