@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png"
+import { navBarLinks } from "../data/links"
 
 function Header() {
   return (
@@ -25,10 +26,9 @@ function Header() {
 
       {/* Navigation */}
       <nav className="flex items-center">
-        <a href="#" className="text-gray-500 border-r px-10 hover:text-gray-900">Home</a>
-        <a href="#" className="text-gray-500 border-r px-10 hover:text-gray-900">About</a>
-        <a href="#" className="text-gray-500 border-r px-10 hover:text-gray-900">Shop</a>
-        <a href="#" className="text-gray-500  px-10 hover:text-gray-900">Help</a>
+        {navBarLinks.map((item) =>(
+          <a href={item.path} className="text-gray-500 border-r px-10 hover:text-gray-900">{item.name}</a>
+          ))}
 
         <button type="button" 
           className="flex items-center 

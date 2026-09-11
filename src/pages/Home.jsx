@@ -4,6 +4,7 @@ import FeaturedProducts from "../components/FeaturedProducts";
 import Newsletter from "../components/Newsletter";
 import ProductGrid from "../components/ProductGrid";
 import AboutSection from "../components/AboutSection";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <Newsletter />
       <ProductGrid />
       <AboutSection />
+      <Footer />
     </>
   );
 }

@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 function ProductGrid() {
   return (
     <section className="p-5">
-      <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-5 md:m-20">
+      <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-5 md:m-10 lg:m-20">
         <div className="col-span-2 md:col-span-1 md:row-span-2">
           <ProductCard
             image={backpack}
