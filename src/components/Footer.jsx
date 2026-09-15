@@ -4,12 +4,12 @@ import { copyright } from "../data/strings"
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white p-12">
+    <footer className="bg-gray-800 text-white p-6 md:p-12">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8 mb-8">
 
         <div className="md:col-span-2">
           <img src={logo} alt="Logo" className="w-28 mb-3"/>
-          <p className="font-light">Location</p>
+          <p className="font-light text-sm">Location</p>
         </div>
 
         <div>
@@ -17,7 +17,7 @@ function Footer() {
           
           <ul>
             {navBarLinks.map((item) => (
-              <li key={item.name} className="font-light">
+              <li key={item.name} className="font-light text-sm">
                 <a href={item.path}>{item.name}</a>
               </li>
             ))}
@@ -29,7 +29,7 @@ function Footer() {
 
           <ul>
             {companyLinks.map((item) => (
-              <li key={item.name} className="font-light">
+              <li key={item.name} className="font-light text-sm">
                 <a href={item.path}>{item.name}</a>
               </li>
             ))}
@@ -41,7 +41,7 @@ function Footer() {
 
           <ul>
             {discoverLinks.map((item) => (
-              <li key={item.name} className="font-light">
+              <li key={item.name} className="font-light text-sm">
                 <a href={item.path}>{item.name}</a>
               </li>
             ))}
@@ -53,7 +53,7 @@ function Footer() {
 
           <ul>
             {socialMediaLinks.map((item) => (
-              <li key={item.name} className="font-light">
+              <li key={item.name} className="font-light text-sm">
                 <a href={item.path}>{item.name}</a>
               </li>
             ))}
@@ -64,7 +64,7 @@ function Footer() {
 
       <div>
         <hr className="text-white mb-5" />
-        <p className="font-light">&copy; {copyright}</p>
+        <p className="font-light text-sm">&copy; {copyright}</p>
       </div>
     </footer>
   )

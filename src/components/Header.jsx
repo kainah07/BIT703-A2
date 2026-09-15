@@ -1,7 +1,7 @@
 import logo from "../assets/logo.png"
 import { navBarLinks } from "../data/links"
 
-function Header() {
+function Header({showSearchBar=true}) {
   return (
     <header className="flex justify-between items-center px-10 py-3">
       
@@ -12,16 +12,19 @@ function Header() {
         </a>
 
         {/* Search */}
-        <form>
-          <div className="flex items-center w-81.25 h-9 border px-2 gap-2">
-            <span aria-hidden="true" className="material-symbols-outlined">
-              search
-            </span>
+        {showSearchBar && (
+          <form>
+            <div className="flex items-center w-81.25 h-9 border px-2 gap-2">
+              <span aria-hidden="true" className="material-symbols-outlined">
+                search
+              </span>
 
-            <input type="search" placeholder="Search..." className="flex-1 border-0 outline-none"/>
-          </div>
+              <input type="search" placeholder="Search..." className="flex-1 border-0 outline-none"/>
+            </div>
           
-        </form>
+          </form>
+        )}
+        
       </div>
 
       {/* Navigation */}
