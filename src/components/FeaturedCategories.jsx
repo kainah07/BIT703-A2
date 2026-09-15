@@ -2,7 +2,7 @@ import { categories } from "../data/products";
 
 function FeaturedCategories() {
   return(
-    <section className="p-5">
+    <section className="p-5 mt-20">
       <h2 className="text-3xl md:text-4xl text-center font-light mb-5">Featured Categories</h2>
       <p className="text-center mb-5 text-gray-500 md:mb-0">
         Explore our collection of quality gear designed for your next adventure.
