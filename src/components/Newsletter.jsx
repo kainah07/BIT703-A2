@@ -20,7 +20,13 @@ function Newsletter({image, showImage=false, showMessage=true}){
             <div className="flex flex-col md:flex-row md:items-center gap-5">
               <input type="email" placeholder="Email Address" className="border-2 border-gray-400 
               w-full md:w-100 h-11 p-4 outline-none" />
-              <Button type="submit">Subscribe</Button>
+              <Button 
+                type="submit" 
+                isPrimary={false}
+                >
+                  Subscribe
+              </Button>
+              
             </div>
           </form>
 

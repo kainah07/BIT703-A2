@@ -1,6 +1,6 @@
 function ProductRating() {
   return (
-    <div className="text-right">
+    <div>
       <span>★★★★★</span>
     </div>
   )

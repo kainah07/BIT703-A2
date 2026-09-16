@@ -1,5 +1,5 @@
-import backpack from "../assets/backpack.jpg";
-import hikingBoots from "../assets/hiking-boots.jpg";
+import backpack from "../assets/products/backpack.jpg";
+import hikingBoots from "../assets/products/hiking-boots.jpg";
 import ProductCard from "./ProductCard";
 
 function ProductGrid() {

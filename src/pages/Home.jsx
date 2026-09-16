@@ -21,7 +21,9 @@ function Home() {
       <Newsletter />
       <ProductGrid />
       <AboutSection />
-      <Footer />
+      <Footer 
+        isDefault={true}
+      />
     </>
   );
 }
