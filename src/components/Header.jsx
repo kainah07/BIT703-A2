@@ -1,14 +1,19 @@
+import { useState } from "react";
 import logo from "../assets/logo.png"
 import { navBarLinks } from "../data/links"
 import SearchBar from "./SearchBar"
 
 function Header({showSearchBar=true}) {
+
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="flex justify-between items-center px-3 md:px-10 py-3 bg-white md:bg-transparent">
+    <header className="relative flex justify-between items-center px-3 md:px-10 py-3 bg-white md:bg-transparent">
       
       <div className="flex items-center gap-3 md:gap-2">
         {/* Menu for mobile */}
-        <button type="button" aria-label="Open menu" className="flex items-center md:hidden">
+        <button type="button" aria-label="Open menu" className="flex items-center md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span className="material-symbols-outlined">
             menu
           </span>
@@ -51,7 +56,21 @@ function Header({showSearchBar=true}) {
         </span>
       </button>
 
+      {menuOpen && (
+        <nav className="absolute flex flex-col gap-5 left-0 top-full w-full md:hidden bg-white border-y border-gray-300 p-5 z-50">
+          {navBarLinks.map((item) => (
+            <a key={item.name} href={item.path} 
+              className="text-gray-600 hover:text-gray-900"
+              onClick={() => setMenuOpen(false)}
+            >{item.name}</a>
+          ))}
+          <SearchBar />
+        </nav>
+      )}
+
     </header>
+
+    
   )
 }
 

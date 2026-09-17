@@ -6,7 +6,6 @@ import newsLetterImage from "../assets/news-letter-image.jpg"
 import ShopProducts from "../components/ShopProducts";
 import Footer from "../components/Footer";
 import shopBackground from "../assets/shop-hero-bg.jpg"
-import SearchBar from "../components/SearchBar";
 
 function Shop() {
   return (
@@ -17,10 +16,7 @@ function Shop() {
         <Header 
         showSearchBar={false}
         />
-        <div className="md:hidden">
-          <SearchBar />
-        </div>
-        
+      
         <Hero
           title={"Explore Our Collection"}
           showButton={false}

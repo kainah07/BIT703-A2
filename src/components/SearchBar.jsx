@@ -5,7 +5,7 @@ function SearchBar({showButton=false}) {
     return (
       <form>
         {/* Mobile search bar */}
-        <div className="flex md:hidden items-center h-13 w-full px-2 gap-2 bg-gray-100 border border-gray-200">
+        <div className="flex md:hidden items-center h-13 w-full px-2 gap-2 bg-gray-100 border border-gray-300 rounded-md">
           <span aria-hidden="true" className="material-symbols-outlined">
             search
           </span>

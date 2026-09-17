@@ -7,7 +7,6 @@ import ProductGrid from "../components/ProductGrid";
 import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
 import homeBackground from "../assets/home-hero-bg.jpg"
-import SearchBar from "../components/SearchBar";
 
 function Home() {
   return (
@@ -15,9 +14,6 @@ function Home() {
       <div className="bg-cover bg-center hero-background"
             style={{backgroundImage: `url(${homeBackground})`}}>
         <Header />
-        <div className="md:hidden">
-          <SearchBar />
-        </div>
         <Hero 
         title={"Gear Up Your New Adventure"}
         showImages={true}
@@ -25,7 +21,7 @@ function Home() {
       </div>
       
       <FeaturedProducts />
-      <Newsletter 
+      <Newsletter
       />
       <ProductGrid />
       <AboutSection />
