@@ -9,8 +9,8 @@ function Newsletter({image, showImage=false, showMessage=true}){
       <div>
         <h2 className="text-3xl md:text-4xl font-light mb-5 md:mb-3">Newsletter</h2>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-50">
-          { showMessage && ( <p className="mb-5 text-gray-100 md:mb-0"
+        <div className="flex flex-col md:flex-row md:items-center justify-between md:gap-50">
+          { showMessage && ( <p className="mb-5 text-gray-700"
             >
               Subscribe to our newsletter for the latest updates and offers.
             </p>
