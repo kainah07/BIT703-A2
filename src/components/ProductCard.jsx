@@ -1,12 +1,12 @@
 import ProductRating from "./ProductRating";
 
-function ProductCard({image, name, price, className, imageClassName, showRating = false, horizontal= false, path="#"}) {
+function ProductCard({image, name, price, className, imageClassName, showRating = false, horizontal= false, featured=false, path="#"}) {
   return (
     <article >
       <a href={path} className={`${horizontal ? "flex gap-4" : ""} ${className}`}>
         <img src={image} 
           alt={name} 
-          className={`${horizontal ? "w-54 h-34" : "w-full"} object-cover rounded-md ${imageClassName}`}
+          className={`${horizontal ? "w-54 h-34" : "w-full"} ${featured ? "h-45 md:h-90" : ""} object-cover rounded-md ${imageClassName}`}
         />
         
         <div className={horizontal ? "mt-0": showRating ? "grid grid-cols-2 mt-4" : "text-center mt-4"}>
