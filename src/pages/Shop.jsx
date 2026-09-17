@@ -35,6 +35,7 @@ function Shop() {
         image={newsLetterImage}
         showImage={true}
         showMessage={false}
+        isHome={false}
       />
 
       <ShopProducts />
