@@ -9,9 +9,27 @@
   --color-border: #CBD2D2;
 }
 
+.hero-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(5px);
+}
+
+.hero-background > * {
+  position: relative;
+}
+
 /* Typography */
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 300;
 }
 

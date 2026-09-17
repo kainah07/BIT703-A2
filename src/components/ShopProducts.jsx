@@ -34,7 +34,7 @@ function ShopProducts() {
     </div>
   </div>
   
-  <a href="" className="text-center md:hidden ">Browse All</a>
+  <a href="" className="block text-center md:hidden underline hover:text-gray-100">Browse All</a>
 </section>
   )
 }
