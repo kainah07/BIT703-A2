@@ -2,7 +2,7 @@ import Button from './Button';
 
 function Newsletter({image, showImage=false, showMessage=true, isHome=true}){
   return (
-    <section className={`flex flex-col md:flex-row md:items-center md:px-20 gap-5 md:gap-20 border-y ${isHome ? "md:py-15" : "md:py-5"}`}>
+    <section className={`flex flex-col md:flex-row md:items-center p-5 md:px-20 gap-5 md:gap-20 border-y ${isHome ? "md:py-15" : "md:py-5"}`}>
       {showImage && (
         <img src={image} alt="Hiking" className="w-120 rounded-md"/>
       )}
