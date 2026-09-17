@@ -1,10 +1,10 @@
 
 // Page navigation links
 export const navBarLinks = [
-  {name: "Home", path: "#"},
-  {name: "About", path: "#"},
-  {name: "Shop", path: "#"},
-  {name: "Help", path: "#"}
+  {name: "Home", path: "/"},
+  {name: "About", path: "/about"},
+  {name: "Shop", path: "/shop"},
+  {name: "Help", path: "/help"}
 ]
 
 // Footer links

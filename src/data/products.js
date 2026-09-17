@@ -1,3 +1,7 @@
+import hero1 from "../assets/hero1.jpg"
+import hero2 from "../assets/hero2.jpg"
+import hero3 from "../assets/hero3.jpg"
+
 import category1 from "../assets/category1.jpg"
 import category2 from "../assets/category2.jpg"
 import category3 from "../assets/category3.jpg"
@@ -14,6 +18,12 @@ import sleepingBag from "../assets/products/sleeping-bag.jpg"
 import treckingPole from "../assets/products/treking-pole.jpg"
 import treckingSandals from "../assets/products/treking-sandals.jpg"
 
+// hero images
+export const heroImages = [
+  {name: "backpack", img: hero1},
+  {name: "hiking gears", img: hero2},
+  {name: "treking", img: hero3}
+]
 
 // categories
 export const categories = [
@@ -100,7 +110,7 @@ export const products = [
     name: "treking sandals", 
     price: 230, 
     img: treckingSandals, 
-    category: "footwears"
+    category: "footwear"
   },
   
   
