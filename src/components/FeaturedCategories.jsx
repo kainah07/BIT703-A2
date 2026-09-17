@@ -49,7 +49,7 @@ function FeaturedCategories() {
         <a
           href=""
           className="flex items-center justify-center p-5
-          bg-gray-700 text-white rounded-md
+          bg-gray-700 text-white rounded-md mb-10
           hover:bg-gray-800 transition-colors duration-200"
         >
           Shop Now
