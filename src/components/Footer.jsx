@@ -1,6 +1,5 @@
 import logo from "../assets/logo.png"
 import { navBarLinks, companyLinks, discoverLinks, socialMediaLinks } from "../data/links"
-import { copyright } from "../data/strings"
 
 function Footer({isDefault=false}) {
 
@@ -68,7 +67,7 @@ function Footer({isDefault=false}) {
 
         <div>
           <hr className="text-white mb-5" />
-          <p>&copy; {copyright}</p>
+          <p>&copy; {new Date().getFullYear()} Aotearoa Adventure Gear. All rights reserved.</p>
         </div>
       </footer>      
     )
@@ -88,7 +87,7 @@ function Footer({isDefault=false}) {
       <hr className="text-white my-5"/>
       
       <div className="text-center">
-        <p>&copy; {copyright}</p>
+        <p>&copy; {new Date().getFullYear()} Aotearoa Adventure Gear. All rights reserved.</p>
       </div>
     </footer>
   )

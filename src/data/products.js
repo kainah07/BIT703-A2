@@ -37,82 +37,133 @@ export const categories = [
 export const products = [
   {
     id: 1,
-    name: "backpack", 
-    price: 300, 
-    img: backpack, 
-    category: "adventure gears"
+    name: "backpack",
+    price: 300,
+    img: backpack,
+    category: "adventure gears",
+    path: "/product/1",
+    description: "A durable backpack designed for outdoor adventures and everyday exploring.",
+    rating: 4,
+    reviewCount: 5
   },
+
   {
     id: 2,
-    name: "camping tent", 
-    price: 450, 
-    img: campingTent, 
-    category: "adventure gears"
+    name: "camping tent",
+    price: 450,
+    img: campingTent,
+    category: "adventure gears",
+    path: "/product/2",
+    description: "A reliable camping tent designed to provide comfortable shelter during outdoor adventures.",
+    rating: 5,
+    reviewCount: 8
   },
+
   {
     id: 3,
-    name: "fleece jacket", 
-    price: 150, 
-    img: fleeceJacket, 
-    category: "clothing"
+    name: "fleece jacket",
+    price: 150,
+    img: fleeceJacket,
+    category: "clothing",
+    path: "/product/3",
+    description: "A warm and comfortable fleece jacket suitable for hiking and outdoor activities.",
+    rating: 4,
+    reviewCount: 6
   },
+
   {
     id: 4,
-    name: "head lamp", 
-    price: 98, 
-    img: headLamp, 
-    category: "adventure gears"
+    name: "head lamp",
+    price: 98,
+    img: headLamp,
+    category: "adventure gears",
+    path: "/product/4",
+    description: "A lightweight head lamp providing reliable hands-free lighting for outdoor adventures.",
+    rating: 4,
+    reviewCount: 7
   },
+
   {
     id: 5,
-    name: "hiking boots", 
-    price: 380, 
-    img: hikingBoots, 
-    category: "footwear"
+    name: "hiking boots",
+    price: 380,
+    img: hikingBoots,
+    category: "footwear",
+    path: "/product/5",
+    description: "Durable hiking boots designed to provide comfort and support on outdoor trails.",
+    rating: 5,
+    reviewCount: 10
   },
+
   {
     id: 6,
-    name: "hiking jacket", 
-    price: 300, 
-    img: hikingJacket, 
-    category: "clothing"
+    name: "hiking jacket",
+    price: 300,
+    img: hikingJacket,
+    category: "clothing",
+    path: "/product/6",
+    description: "A versatile hiking jacket designed to provide protection and comfort in changing weather.",
+    rating: 4,
+    reviewCount: 6
   },
+
   {
     id: 7,
-    name: "hiking pants", 
-    price: 240, 
-    img: hikingPants, 
-    category: "clothing"
+    name: "hiking pants",
+    price: 240,
+    img: hikingPants,
+    category: "clothing",
+    path: "/product/7",
+    description: "Comfortable and durable hiking pants designed for outdoor exploration and active movement.",
+    rating: 4,
+    reviewCount: 5
   },
+
   {
     id: 8,
-    name: "running shoes", 
-    price: 300, 
-    img: runningShoes, 
-    category: "footwear"
+    name: "running shoes",
+    price: 300,
+    img: runningShoes,
+    category: "footwear",
+    path: "/product/8",
+    description: "Lightweight running shoes designed for comfort, movement, and outdoor activities.",
+    rating: 5,
+    reviewCount: 9
   },
+
   {
     id: 9,
-    name: "sleeping bag", 
-    price: 360, 
-    img: sleepingBag, 
-    category: "adventure gears"
+    name: "sleeping bag",
+    price: 360,
+    img: sleepingBag,
+    category: "adventure gears",
+    path: "/product/9",
+    description: "A comfortable sleeping bag designed to keep you warm during camping and outdoor trips.",
+    rating: 4,
+    reviewCount: 7
   },
+
   {
     id: 10,
-    name: "trecking pole", 
-    price: 100, 
-    img: treckingPole, 
-    category: "adventure gears"
+    name: "trecking pole",
+    price: 100,
+    img: treckingPole,
+    category: "adventure gears",
+    path: "/product/10",
+    description: "A sturdy trekking pole designed to provide stability and support while hiking.",
+    rating: 4,
+    reviewCount: 5
   },
+
   {
     id: 11,
-    name: "treking sandals", 
-    price: 230, 
-    img: treckingSandals, 
-    category: "footwear"
-  },
-  
-  
-  
-]
+    name: "treking sandals",
+    price: 230,
+    img: treckingSandals,
+    category: "footwear",
+    path: "/product/11",
+    description: "Lightweight trekking sandals designed for comfort and support during outdoor activities.",
+    rating: 4,
+    reviewCount: 6
+  }
+];

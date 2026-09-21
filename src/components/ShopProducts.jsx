@@ -28,6 +28,7 @@ function ShopProducts() {
             image={product.img}
             name={product.name}
             price={product.price}
+            path={product.path}
             showRating={true}
             horizontal={true}
           />

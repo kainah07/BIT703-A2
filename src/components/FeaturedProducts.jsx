@@ -50,6 +50,7 @@ function FeaturedProducts() {
               image={product.img}
               name={product.name}
               price={product.price}
+              path={product.path}
               featured={true}
               className="min-w-0"
             />

@@ -16,6 +16,7 @@ function ProductGrid() {
             image={gridProducts[0].img}
             name={gridProducts[0].name}
             price={gridProducts[0].price}
+            path={gridProducts[0].path}
             imageClassName="h-52 md:h-125"
             showRating={true}
           />
@@ -28,6 +29,7 @@ function ProductGrid() {
               image={product.img}
               name={product.name}
               price={product.price}
+              path={product.path}
               imageClassName="h-52"
               showRating={true}
             />
