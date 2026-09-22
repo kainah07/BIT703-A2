@@ -1,4 +1,19 @@
+import { useState } from "react";
+import { useCart } from "../js/cart";
+
 function ProductInfo({ product }) {
+  const [added, setAdded] = useState(false);
+
+  const { addToCart } = useCart();
+
+  function handleAddToCart() {
+    addToCart(product);
+    setAdded(true);
+
+    setTimeout(() => {
+      setAdded(false);
+      }, 1000);
+  }
 
   return (
     <div className="p-6 md:p-10">
@@ -45,9 +60,10 @@ function ProductInfo({ product }) {
       {/* Add to cart */}
       <button
         type="button"
+        onClick={handleAddToCart}
         className="bg-[#2F4B4D] text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200"
       >
-        Add To Cart
+        {added ? "Added To Cart" : "Add To Cart"}
       </button>
 
     </div>

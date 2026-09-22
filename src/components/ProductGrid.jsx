@@ -12,14 +12,25 @@ function ProductGrid() {
 
         {/* Large featured product */}
         <div className="col-span-2 md:col-span-1 md:row-span-2">
-          <ProductCard
-            image={gridProducts[0].img}
-            name={gridProducts[0].name}
-            price={gridProducts[0].price}
-            path={gridProducts[0].path}
-            imageClassName="h-52 md:h-125"
-            showRating={true}
-          />
+          <a href="/product/1">
+            <img
+              src={gridProducts[0].img}
+              alt={gridProducts[0].name}
+              className="w-full h-52 md:h-125 object-cover rounded-md"
+            />
+
+            <div className="grid grid-cols-2 mt-4">
+              <div>
+                <h3 className="font-light uppercase">
+                  {gridProducts[0].name}
+                </h3>
+
+                <p className="font-light">
+                  ${gridProducts[0].price}
+                </p>
+              </div>
+            </div>
+          </a>
         </div>
 
         {/* Remaining products */}

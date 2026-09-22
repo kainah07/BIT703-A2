@@ -3,6 +3,8 @@ import logo from "../assets/logo.png"
 import { navBarLinks } from "../data/links"
 import SearchBar from "./SearchBar"
 
+import { Link } from "react-router-dom";
+
 function Header({showSearchBar=true}) {
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +41,7 @@ function Header({showSearchBar=true}) {
           <a href={item.path} className="text-gray-600 border-r px-10 hover:text-gray-900">{item.name}</a>
           ))}
 
-        <button type="button" 
+        <Link to="/cart" 
           className="flex items-center 
           bg-gray-700 text-white 
           px-4 py-2 gap-2 rounded-md
@@ -47,14 +49,14 @@ function Header({showSearchBar=true}) {
         >
           <span className="material-symbols-outlined cart-icon">shopping_cart</span>
 
-          Your Cart</button>
+          Your Cart</Link>
       </nav> 
 
-      <button type="button" aria-label="Shopping cart" className="md:hidden">
+      <Link to="/cart" className="md:hidden">
         <span className="material-symbols-outlined cart-icon">
           shopping_cart
         </span>
-      </button>
+      </Link>
 
       {menuOpen && (
         <nav className="absolute flex flex-col gap-5 left-0 top-full w-full md:hidden bg-white border-y border-gray-300 p-5 z-50">
