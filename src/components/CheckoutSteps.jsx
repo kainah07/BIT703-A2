@@ -1,7 +1,7 @@
 function CheckoutSteps({ currentStep = 1 }) {
   return (
     <section className="bg-gray-50 px-5 md:px-10 py-10">
-      <div className="grid grid-cols-3 border-b">
+      <div className="grid grid-cols-3 border-b border-gray-300">
 
         {/* Shopping Cart */}
         <div

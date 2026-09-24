@@ -7,8 +7,21 @@ export function useCart() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  const [couponApplied, setCouponApplied] = useState(false);
-  const [couponMessage, setCouponMessage] = useState("");
+  const [couponApplied, setCouponApplied] = useState(() => {
+    return localStorage.getItem("couponApplied") === "true";
+  });
+
+  const [couponMessage, setCouponMessage] = useState(() => {
+    return localStorage.getItem("couponMessage") || "";
+  });
+
+  const [voucherApplied, setVoucherApplied] = useState(() => {
+    return localStorage.getItem("voucherApplied") === "true";
+  });
+
+  const [voucherMessage, setVoucherMessage] = useState(() => {
+    return localStorage.getItem("voucherMessage") || "";
+  });
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -77,11 +90,40 @@ export function useCart() {
     const normalizedCode = code.trim().toUpperCase();
 
     if (normalizedCode === "ADVENTURE10") {
-      setCouponApplied(true);
-      setCouponMessage("10% discount applied.");
+    setCouponApplied(true);
+    setCouponMessage("10% discount applied.");
+
+    localStorage.setItem("couponApplied", "true");
+    localStorage.setItem("couponMessage", "10% discount applied.");
     } else {
       setCouponApplied(false);
       setCouponMessage("Invalid coupon code.");
+
+      localStorage.removeItem("couponApplied");
+      localStorage.setItem("couponMessage", "Invalid coupon code.");
+    }
+  }
+
+
+  // Apply voucher
+  function applyVoucher(code) {
+    const normalizedCode = code.trim().toUpperCase();
+
+    if (normalizedCode === "GEAR20") {
+      setVoucherApplied(true);
+      setVoucherMessage("Voucher applied: $20 off.");
+
+      localStorage.setItem("voucherApplied", "true");
+      localStorage.setItem("voucherMessage", "Voucher applied: $20 off.");
+    } else {
+      setVoucherApplied(false);
+      setVoucherMessage("Invalid voucher code.");
+
+      localStorage.removeItem("voucherApplied");
+      localStorage.setItem(
+        "voucherMessage",
+        "Invalid voucher code."
+      );
     }
   }
 
@@ -93,7 +135,13 @@ export function useCart() {
   );
 
   // Calculate coupon discount
-  const discount = couponApplied ? subtotal * 0.10 : 0;
+  const couponDiscount = couponApplied ? subtotal * 0.10 : 0;
+
+  // Calculate voucher discount
+  const voucherDiscount = voucherApplied ? 20 : 0;
+
+  // Calculate total discount
+  const discount = couponDiscount + voucherDiscount;
 
   // Free shipping for orders over $600
   const shipping = subtotal > 600 ? 0 : 20;
@@ -109,6 +157,10 @@ export function useCart() {
     decreaseQuantity,
     applyCoupon,
     couponMessage,
+    applyVoucher,
+    voucherApplied,
+    voucherMessage,
+    voucherDiscount,
     subtotal,
     discount,
     shipping,

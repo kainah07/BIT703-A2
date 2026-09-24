@@ -156,7 +156,7 @@ function Cart() {
           </div>
 
           {/* Summary */}
-          <aside>
+          <aside className="md:m-4.5">
 
             <h2 className="text-2xl md:text-3xl font-light border-b pb-2 mb-5">
               Summary
@@ -237,7 +237,7 @@ function Cart() {
               <span>${total.toFixed(2)}</span>
             </div>
 
-            {/* Cart buttons */}
+            {/* Cart buttons mobile */}
             {cart.length > 0 && (
               <div className="flex justify-end md:hidden gap-3 mt-6">
 
