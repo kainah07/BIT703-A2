@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CheckoutSteps from "../components/CheckoutSteps";
+import OrderSummary from "../components/OrderSummary";
 
 function Shipping() {
    const {
@@ -21,7 +22,17 @@ function Shipping() {
     subtotal > 600 ? "free" : "next-day"
    );
 
-   const shippingCost = shippingMethod === "free" ? 0 : 20;
+   const shippingCost =
+    subtotal > 600
+      ? shippingMethod === "next-day"
+        ? 5
+        : 0
+      : shippingMethod === "next-day"
+        ? 25
+        : 20;
+
+  localStorage.setItem("shippingMethod", shippingMethod);
+  localStorage.setItem("shippingCost", shippingCost);
 
    const [showVoucher, setShowVoucher] = useState(false);
    const [voucherCode, setVoucherCode] = useState("");
@@ -138,11 +149,12 @@ function Shipping() {
                   value="free"
                   checked={shippingMethod === "free"}
                   onChange={() => setShippingMethod("free")}
-                  disabled={subtotal <= 600}
                 />
 
                 <div>
-                  <p className="font-light">Free Shipping</p>
+                  <p className="font-light">
+                    {subtotal > 600 ? "Free Shipping" : "Standard Shipping - $20"}
+                  </p>
                   <p className="text-sm text-gray-400">
                     Between 2 - 5 working days
                   </p>
@@ -160,7 +172,9 @@ function Shipping() {
                 />
 
                 <div>
-                  <p className="font-light">Next Day Delivery - $20</p>
+                  <p className="font-light">
+                    Next Day Delivery - Additional $5
+                  </p>
                   <p className="text-sm text-gray-400">
                     24 hours from checkout
                   </p>
@@ -189,135 +203,21 @@ function Shipping() {
           </div>
 
           {/* Summary */}
-          <aside className="md:mt-4.5">
-            <h2 className="text-2xl md:text-3xl font-light border-b border-gray-300 pb-2 mb-5">
-              Summary
-            </h2>
-
-            {/* Cart products */}
-            <div className="border-b border-gray-300 pb-5 mb-5">
-              {cart.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex items-center gap-4 mb-5 last:mb-0"
-                >
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="w-20 h-20 object-cover rounded-md"
-                  />
-
-                  <div className="flex-1">
-                    <p className="font-light uppercase">
-                      {product.name}
-                    </p>
-
-                    <p className="text-sm text-gray-400">
-                      Quantity: {product.quantity}
-                    </p>
-                  </div>
-
-                  <p>
-                    ${(product.price * product.quantity).toFixed(2)}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Order summary */}
-            <div className="space-y-4">
-              {/* Voucher */}
-              <button
-                type="button"
-                onClick={() => setShowVoucher(!showVoucher)}
-                className="w-full flex justify-between items-center border-b border-gray-300 pb-4 mb-4 text-left"
-              >
-                <span className="text-sm text-gray-500">
-                  HAVE A VOUCHER?
-                </span>
-
-                <span className="text-gray-500">
-                  {showVoucher ? "▲" : "▼"}
-                </span>
-              </button>
-
-              {showVoucher && (
-                <div className="mb-5">
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="Voucher code"
-                      value={voucherCode}
-                      onChange={(e) => setVoucherCode(e.target.value)}
-                      className="border w-full h-10 px-3"
-                    />
-
-                    <button
-                      type="button"
-                      onClick={() => applyVoucher(voucherCode)}
-                      className="bg-[#2F4B4D] text-white px-4 hover:bg-gray-800 transition-colors"
-                    >
-                      Apply
-                    </button>
-                  </div>
-
-                  {voucherMessage && (
-                    <p
-                      className={`text-sm mt-3 ${
-                        voucherMessage === "Invalid voucher code."
-                          ? "text-red-600"
-                          : "text-green-700"
-                      }`}
-                    >
-                      {voucherMessage}
-                    </p>
-                  )}
-                </div>
-              )}
-
-              <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
-              </div>
-
-              {/* Coupon discount */}
-              {discount > 0 && (
-                <div className="flex justify-between text-green-700">
-                  <span>Coupon Discount</span>
-                  <span>-${discount.toFixed(2)}</span>
-                </div>
-              )}
-
-              {/* Voucher discount */}
-              {voucherDiscount > 0 && (
-                <div className="flex justify-between text-green-700">
-                  <span>Voucher Discount</span>
-                  <span>-${voucherDiscount.toFixed(2)}</span>
-                </div>
-              )}
-
-              <div className="flex justify-between">
-                <span>Shipping</span>
-                <span>
-                  {shippingCost === 0
-                    ? "FREE"
-                    : `$${shippingCost.toFixed(2)}`}
-                </span>
-              </div>
-
-              <div className="flex justify-between border-b border-gray-300 pb-5">
-                <span>Taxes</span>
-                <span>$0.00</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span>Total</span>
-                <span>
-                  ${(subtotal - discount + shippingCost).toFixed(2)}
-                </span>
-              </div>
-            </div>
-          </aside>
+          <OrderSummary
+            cart={cart}
+            subtotal={subtotal}
+            discount={discount}
+            voucherDiscount={voucherDiscount}
+            shippingCost={shippingCost}
+            taxes={0}
+            showVoucher={showVoucher}
+            setShowVoucher={setShowVoucher}
+            voucherCode={voucherCode}
+            setVoucherCode={setVoucherCode}
+            applyVoucher={applyVoucher}
+            voucherMessage={voucherMessage}
+          />
+          
 
         </section>
       </main>

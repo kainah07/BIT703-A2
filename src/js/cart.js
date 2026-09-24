@@ -21,6 +21,7 @@ export function useCart() {
 
   const [voucherMessage, setVoucherMessage] = useState(() => {
     return localStorage.getItem("voucherMessage") || "";
+
   });
 
   useEffect(() => {
@@ -53,6 +54,29 @@ export function useCart() {
         },
       ];
     });
+  }
+
+   function clearCart() {
+    setCart([]);
+
+    // Remove items from cart
+    localStorage.removeItem("cart");
+
+     // Clear coupon
+    setCouponApplied(false);
+    setCouponMessage("");
+    localStorage.removeItem("couponApplied");
+    localStorage.removeItem("couponMessage");
+
+    // Clear voucher
+    setVoucherApplied(false);
+    setVoucherMessage("");
+    localStorage.removeItem("voucherApplied");
+    localStorage.removeItem("voucherMessage");
+
+    // Clear shipping selection
+    localStorage.removeItem("shippingMethod");
+    localStorage.removeItem("shippingCost");
   }
 
   // Increase quantity
@@ -144,7 +168,12 @@ export function useCart() {
   const discount = couponDiscount + voucherDiscount;
 
   // Free shipping for orders over $600
-  const shipping = subtotal > 600 ? 0 : 20;
+  const shipping =
+    cart.length === 0
+      ? 0
+      : subtotal > 600
+        ? 0
+        : 20;
 
   const taxes = 0;
 
@@ -155,6 +184,7 @@ export function useCart() {
     addToCart,
     increaseQuantity,
     decreaseQuantity,
+    clearCart,
     applyCoupon,
     couponMessage,
     applyVoucher,

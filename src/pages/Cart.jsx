@@ -219,9 +219,11 @@ function Cart() {
               <span>Shipping</span>
 
               <span>
-                {shipping === 0
-                  ? "FREE"
-                  : `$${shipping.toFixed(2)}`}
+                {cart.length === 0
+                  ? "$0.00"
+                  : shipping === 0
+                    ? "FREE"
+                    : `$${shipping.toFixed(2)}`}
               </span>
             </div>
 
