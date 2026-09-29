@@ -11,6 +11,17 @@ import homeBackground from "../assets/home-hero-bg.jpg"
 function Home() {
   return (
     <>
+      {/* Floating anchor */}
+      <a
+        href="#top"
+        className="fixed bottom-5 right-5 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-800 transition-colors z-50"
+        aria-label="Back to top"
+      >
+        <span className="material-symbols-outlined"  style={{ fontSize: "18px" }}>
+          north
+        </span>
+      </a>
+
       <div className="bg-cover bg-center hero-background"
             style={{backgroundImage: `url(${homeBackground})`}}>
         <Header />

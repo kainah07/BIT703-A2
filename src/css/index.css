@@ -9,6 +9,10 @@
   --color-border: #CBD2D2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hero-background {
   position: relative;
   background-size: cover;
