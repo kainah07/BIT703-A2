@@ -7,7 +7,13 @@ import ShopProducts from "../components/ShopProducts";
 import Footer from "../components/Footer";
 import shopBackground from "../assets/shop-hero-bg.jpg"
 
+import { useSearchParams } from "react-router-dom";
+
 function Shop() {
+  const [searchParams] = useSearchParams();
+
+  const searchTerm = searchParams.get("search") || "";
+  const viewAll = searchParams.get("view") === "all";
   return (
     <>
       <div className="bg-cover bg-center"
@@ -25,16 +31,23 @@ function Shop() {
         />
       </div>
       
+      {!searchTerm && !viewAll && (
+        <>
+          <FeaturedCategories />
 
-      <FeaturedCategories />
-      <Newsletter 
-        image={newsLetterImage}
-        showImage={true}
-        showMessage={false}
-        isHome={false}
-      />
+          <Newsletter
+            image={newsLetterImage}
+            showImage={true}
+            showMessage={false}
+            isHome={false}
+          />
+        </>
+      )}
 
-      <ShopProducts />
+      <ShopProducts         
+        searchTerm={searchTerm}
+        viewAll={viewAll}
+/>
       <Footer />
     </>
   )
