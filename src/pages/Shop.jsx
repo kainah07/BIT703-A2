@@ -14,6 +14,8 @@ function Shop() {
 
   const searchTerm = searchParams.get("search") || "";
   const viewAll = searchParams.get("view") === "all";
+  const category = searchParams.get("category") || "";
+
   return (
     <>
       <div className="bg-cover bg-center"
@@ -31,7 +33,7 @@ function Shop() {
         />
       </div>
       
-      {!searchTerm && !viewAll && (
+      {!searchTerm && !viewAll && !category && (
         <>
           <FeaturedCategories />
 
@@ -47,7 +49,8 @@ function Shop() {
       <ShopProducts         
         searchTerm={searchTerm}
         viewAll={viewAll}
-/>
+        category={category}
+      />
       <Footer />
     </>
   )

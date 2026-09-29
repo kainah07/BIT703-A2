@@ -27,9 +27,9 @@ export const heroImages = [
 
 // categories
 export const categories = [
-  {name: "adventure gears", img: category1, path: "#"},
-  {name: "clothing", img: category2, path: "#"},
-  {name: "footwear", img: category3, path: "#"}
+  {name: "adventure gears", img: category1, path: "/shop?category=adventure%20gears"},
+  {name: "clothing", img: category2, path: "/shop?category=clothing"},
+  {name: "footwear", img: category3, path: "/shop?category=footwear"}
 ]
 
 // products
