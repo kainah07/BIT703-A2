@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { categories } from "../data/products";
 
 function FeaturedCategories() {
@@ -11,8 +12,8 @@ function FeaturedCategories() {
       <div className="flex md:grid md:grid-cols-4 gap-5 md:gap-8 overflow-x-auto md:overflow-visible my-6 md:my-16 px-5 md:px-0 md:w-250 md:mx-auto">
         {categories.map((item =>
           <div key={item.name} className="flex-none w-60 md:w-auto">
-            <a
-              href={item.path}
+            <Link
+              to={item.path}
               className="block group"
             >
               <div className="relative overflow-hidden rounded-md">
@@ -28,19 +29,19 @@ function FeaturedCategories() {
                text-gray-500 group-hover:text-gray-800 transition-colors duration-200">
                 {item.name}
               </p>
-            </a>
+            </Link>
           </div>
         ))}
 
         <div className="hidden md:block md:w-auto h-80">
-          <a
-            href=""
+          <Link
+            to={"/shop?view=all"}
             className="w-full h-full flex items-center justify-center
             bg-gray-700 text-white rounded-md
             hover:bg-gray-800 transition-colors duration-200"
           >
             Shop Now
-          </a>
+          </Link>
         </div>
 
       </div>

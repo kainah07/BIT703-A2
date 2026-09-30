@@ -1,6 +1,7 @@
 import ProductRating from "./ProductRating";
 import { useState } from "react";
 import { useCart } from "../js/cart";
+import { Link } from "react-router-dom";
 
 function ProductCard({product, image, name, price, 
   className, imageClassName, showRating =false, 
@@ -20,7 +21,7 @@ function ProductCard({product, image, name, price,
     }
   return (
     <article >
-      <a href={path} className={`${horizontal ? "flex gap-4" : ""} ${className}`}>
+      <Link to={path} className={`${horizontal ? "flex gap-4" : ""} ${className}`}>
         <img src={image} 
           alt={name} 
           className={`${horizontal ? "w-54 h-34" : "w-full"} ${featured ? "h-45 md:h-90" : ""} ${shop ? "w-full h-60" : ""} object-cover rounded-md ${imageClassName}`}
@@ -40,7 +41,7 @@ function ProductCard({product, image, name, price,
           </div>
         
         </div>
-      </a>
+      </Link>
       {shop && (
         <button
           type="button"

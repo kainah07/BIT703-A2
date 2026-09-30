@@ -1,6 +1,7 @@
 import Button from "./Button"
 import SearchBar from "./SearchBar"
 import { heroImages } from "../data/products"
+import { Link } from "react-router-dom";
 
 function Hero({title, isHome=true, showImages=false, showButton=true, showSearchBar=false}) {
   return (
@@ -22,9 +23,11 @@ function Hero({title, isHome=true, showImages=false, showButton=true, showSearch
       {/* Display Shop Now button when enabled */}
       {showButton && (
         <div className="flex justify-center mt-3 md:mt-6">
-          <Button>
-            Shop Now
-          </Button>
+          <Link to={"/shop"}>
+            <Button>
+              Shop Now
+            </Button>
+          </Link>
         </div>
       )}
 

@@ -1,5 +1,6 @@
 import { products } from "../data/products";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
 function ProductGrid() {
 
@@ -12,7 +13,7 @@ function ProductGrid() {
 
         {/* Large featured product */}
         <div className="col-span-2 md:col-span-1 md:row-span-2">
-          <a href="/product/1">
+          <Link to="/product/1">
             <img
               src={gridProducts[0].img}
               alt={gridProducts[0].name}
@@ -30,7 +31,7 @@ function ProductGrid() {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Remaining products */}
