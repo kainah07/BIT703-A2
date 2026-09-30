@@ -184,7 +184,7 @@ function Shipping() {
             </div>
 
             {/* Shipping buttons */}
-            <div className="flex gap-3 mt-6">
+            <div className="hidden md:flex gap-3 mt-6">
               <button
                   type="submit"
                   form="shipping-form"
@@ -218,6 +218,25 @@ function Shipping() {
             voucherMessage={voucherMessage}
           />
           
+          {/* Shipping buttons mobile */}   
+          <div className="flex justify-end md:hidden gap-3 mt-6">
+
+            <button
+                type="submit"
+                form="shipping-form"
+                className="bg-[#2F4B4D] text-white px-10 py-2 hover:bg-gray-800 transition-colors"
+              >
+                Next
+              </button>
+
+            <Link
+            to="/cart"
+              className="bg-gray-200 px-10 py-2 hover:bg-gray-300 transition-colors"
+            >
+              Cancel
+            </Link>
+
+          </div>    
 
         </section>
       </main>

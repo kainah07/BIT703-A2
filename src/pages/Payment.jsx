@@ -176,7 +176,7 @@ function Payment() {
               </div>
 
               {/* Payment Buttons */}
-              <div className="flex gap-3 mt-6">
+              <div className="hidden md:flex gap-3 mt-6">
 
                 <button
                   type="submit"
@@ -212,6 +212,27 @@ function Payment() {
             applyVoucher={applyVoucher}
             voucherMessage={voucherMessage}
           />
+
+          <div className="flex justify-end md:hidden gap-3 mt-6">
+
+            {/* Payment buttons mobile */}  
+            <button
+                type="submit"
+                form="payment-form"
+
+                className="bg-[#2F4B4D] text-white px-10 py-2 hover:bg-gray-800 transition-colors"
+              >
+                Pay Now
+              </button>
+
+            <Link
+              to="/shop"
+              className="bg-gray-200 px-10 py-2 hover:bg-gray-300 transition-colors"
+            >
+              Cancel
+            </Link>
+
+          </div>    
 
         </section>
       </main>
