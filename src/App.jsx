@@ -9,7 +9,7 @@ import Payment from "./pages/Payment";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/BIT703-A2">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
