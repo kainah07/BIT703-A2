@@ -38,7 +38,7 @@ function Header({showSearchBar=true}) {
       {/* Navigation */}
       <nav className="hidden md:flex items-center">
         {navBarLinks.map((item) =>(
-          <a href={item.path} className="text-gray-600 border-r px-10 hover:text-gray-900">{item.name}</a>
+          <Link  key={item.name} to={item.path} className="text-gray-600 border-r px-10 hover:text-gray-900">{item.name}</Link>
           ))}
 
         <Link to="/cart" 
@@ -61,10 +61,10 @@ function Header({showSearchBar=true}) {
       {menuOpen && (
         <nav className="absolute flex flex-col gap-5 left-0 top-full w-full md:hidden bg-white border-y border-gray-300 p-5 z-50">
           {navBarLinks.map((item) => (
-            <a key={item.name} href={item.path} 
+            <Link key={item.name} to={item.path}
               className="text-gray-600 hover:text-gray-900"
               onClick={() => setMenuOpen(false)}
-            >{item.name}</a>
+            >{item.name}</Link>
           ))}
           <SearchBar />
         </nav>
