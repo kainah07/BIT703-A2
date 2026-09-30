@@ -1,5 +1,6 @@
 import logo from "../assets/logo.png"
 import { navBarLinks, companyLinks, discoverLinks, socialMediaLinks } from "../data/links"
+import { Link } from "react-router-dom"
 
 function Footer({isDefault=false}) {
 
@@ -21,7 +22,7 @@ function Footer({isDefault=false}) {
             <ul>
               {navBarLinks.map((item) => (
                 <li key={item.name} className="font-light text-sm">
-                  <a href={item.path}>{item.name}</a>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
@@ -33,7 +34,7 @@ function Footer({isDefault=false}) {
             <ul>
               {companyLinks.map((item) => (
                 <li key={item.name} className="font-light text-sm">
-                  <a href={item.path}>{item.name}</a>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
@@ -45,7 +46,7 @@ function Footer({isDefault=false}) {
             <ul>
               {discoverLinks.map((item) => (
                 <li key={item.name} className="font-light text-sm">
-                  <a href={item.path}>{item.name}</a>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
@@ -57,7 +58,7 @@ function Footer({isDefault=false}) {
             <ul>
               {socialMediaLinks.map((item) => (
                 <li key={item.name} className="font-light text-sm">
-                  <a href={item.path}>{item.name}</a>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul> 
@@ -78,9 +79,9 @@ function Footer({isDefault=false}) {
     <footer className="bg-gray-800 text-white p-6 md:p-12"> 
       <div className="flex flex-col md:flex-row justify-center">  
         {navBarLinks.map((item, index) =>(
-          <a href={item.path} className={`text-white border-white px-10 hover:text-gray-500 transition-colors duration-200
-            ${index !== navBarLinks.length - 1 ? "border-r" : ""}`}>{item.name}
-          </a>
+          <Link to={item.path} className={`text-white border-white px-10 hover:text-gray-500 transition-colors duration-200
+            ${index !== navBarLinks.length - 1 ? "md:border-r" : ""}`}>{item.name}
+          </Link>
         ))}
       </div>
 

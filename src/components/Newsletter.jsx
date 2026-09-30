@@ -2,14 +2,14 @@ import Button from './Button';
 
 function Newsletter({image, showImage=false, showMessage=true, isHome=true}){
   return (
-    <section className={`flex flex-col md:flex-row md:items-center justify-between gap-5 border-y ${isHome ? "px-5 py-5 md:py-15 md:px-20" : "py-5 px-5 md:px-20 md:py-5"}`}>
+    <section className={`flex flex-col lg:flex-row md:items-center justify-between gap-5 border-y ${isHome ? "px-5 py-5 md:py-15 md:px-20" : "py-5 px-5 md:px-20 md:py-5"}`}>
       {showImage && (
         <img src={image} alt="Hiking" className="w-120 rounded-md"/>
       )}
       <div>
         <h2 className="text-3xl md:text-4xl font-light mb-5 md:mb-3">Newsletter</h2>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between md:gap-20">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:gap-20">
           { showMessage && ( <p className="mb-5 text-gray-700"
             >
               Subscribe to our newsletter for the latest updates and offers.
@@ -17,7 +17,7 @@ function Newsletter({image, showImage=false, showMessage=true, isHome=true}){
           )}
 
           <form>
-            <div className="flex flex-col md:flex-row md:items-center gap-5">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-5">
               <input type="email" placeholder="Email Address" className="border-2 border-gray-400 
               w-full md:w-lg h-11 p-4 outline-none" />
               <Button 

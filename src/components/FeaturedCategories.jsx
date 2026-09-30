@@ -9,9 +9,9 @@ function FeaturedCategories() {
         Explore our collection of quality gear designed for your next adventure.
       </p>
 
-      <div className="flex md:grid md:grid-cols-4 gap-5 md:gap-8 overflow-x-auto md:overflow-visible my-6 md:my-16 px-5 md:px-0 md:w-250 md:mx-auto">
+      <div className="flex lg:grid lg:grid-cols-4 gap-5 lg:gap-8 overflow-x-auto lg:overflow-visible my-6 lg:my-16 px-5 lg:px-0 lg:w-250 lg:mx-auto">
         {categories.map((item =>
-          <div key={item.name} className="flex-none w-60 md:w-auto">
+          <div key={item.name} className="flex-none w-60 lg:w-auto">
             <Link
               to={item.path}
               className="block group"
@@ -33,7 +33,7 @@ function FeaturedCategories() {
           </div>
         ))}
 
-        <div className="hidden md:block md:w-auto h-80">
+        <div className="hidden lg:block lg:w-auto h-80">
           <Link
             to={"/shop?view=all"}
             className="w-full h-full flex items-center justify-center
@@ -46,7 +46,7 @@ function FeaturedCategories() {
 
       </div>
 
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <a
           href=""
           className="flex items-center justify-center p-5

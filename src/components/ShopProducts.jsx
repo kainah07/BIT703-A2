@@ -20,7 +20,7 @@ function ShopProducts({ searchTerm, viewAll, category }) {
   const showCatalogue = viewAll || searchTerm || category;
 
   return (
-    <section className="p-5 md:p-10">
+    <section className="p-5 lg:p-10">
 
       {/* Back to Shop */}
       {showCatalogue && (
@@ -35,10 +35,10 @@ function ShopProducts({ searchTerm, viewAll, category }) {
 
       {/* Catalogue Layout */}
       {showCatalogue ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
           {/* Sidebar */}
-          <aside className="md:col-span-1 md:sticky md:top-5 md:self-start">
+          <aside className="lg:col-span-1 lg:sticky lg:top-5 lg:self-start">
             <div className="p-5">
               <h3 className="text-lg font-light uppercase mb-5">
                 Product Filters
@@ -169,10 +169,10 @@ function ShopProducts({ searchTerm, viewAll, category }) {
       ) : (
 
         /* Normal Shop Layout */
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
           {/* Promotional Content */}
-          <div className="border-b md:border-r md:border-b-0 p-5 md:p-10">
+          <div className="border-b lg:border-r lg:border-b-0 p-5 lg:p-10">
             <h2>
               Gear Up for Your Next Adventure
             </h2>

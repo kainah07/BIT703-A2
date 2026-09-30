@@ -9,11 +9,11 @@ function Header({showSearchBar=true}) {
 
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="relative flex justify-between items-center px-3 md:px-10 py-3 bg-white md:bg-transparent">
+    <header className="relative flex justify-between items-center px-3 md:px-10 py-3 bg-white lg:bg-transparent">
       
-      <div className="flex items-center gap-3 md:gap-2">
+      <div className="flex items-center gap-3 lg:gap-2">
         {/* Menu for mobile */}
-        <button type="button" aria-label="Open menu" className="flex items-center md:hidden"
+        <button type="button" aria-label="Open menu" className="flex items-center lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="material-symbols-outlined">
@@ -28,7 +28,7 @@ function Header({showSearchBar=true}) {
 
         {/* Search */}
         {showSearchBar && (
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <SearchBar />
           </div>
         )}
@@ -36,7 +36,7 @@ function Header({showSearchBar=true}) {
       </div>
 
       {/* Navigation */}
-      <nav className="hidden md:flex items-center">
+      <nav className="hidden lg:flex items-center">
         {navBarLinks.map((item) =>(
           <Link  key={item.name} to={item.path} className="text-gray-600 border-r px-10 hover:text-gray-900">{item.name}</Link>
           ))}
@@ -52,14 +52,14 @@ function Header({showSearchBar=true}) {
           Your Cart</Link>
       </nav> 
 
-      <Link to="/cart" className="md:hidden">
+      <Link to="/cart" className="lg:hidden">
         <span className="material-symbols-outlined cart-icon">
           shopping_cart
         </span>
       </Link>
 
       {menuOpen && (
-        <nav className="absolute flex flex-col gap-5 left-0 top-full w-full md:hidden bg-white border-y border-gray-300 p-5 z-50">
+        <nav className="absolute flex flex-col gap-5 left-0 top-full w-full lg:hidden bg-white border-y border-gray-300 p-5 z-50">
           {navBarLinks.map((item) => (
             <Link key={item.name} to={item.path}
               className="text-gray-600 hover:text-gray-900"

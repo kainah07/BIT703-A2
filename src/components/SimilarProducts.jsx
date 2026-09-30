@@ -19,7 +19,7 @@ function SimilarProducts({ product }) {
       </h2>
 
       {/* Similar products */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {similarProducts.map((item) => (
           <ProductCard
             key={item.id}
