@@ -18,28 +18,28 @@ function Shipping() {
     voucherMessage,
   } = useCart();
 
-   const [shippingMethod, setShippingMethod] = useState(
-    subtotal > 600 ? "free" : "next-day"
-   );
+  const [shippingMethod, setShippingMethod] = useState(
+  subtotal > 600 ? "free" : "next-day"
+  );
 
-   const shippingCost =
-    subtotal > 600
-      ? shippingMethod === "next-day"
-        ? 5
-        : 0
-      : shippingMethod === "next-day"
-        ? 25
-        : 20;
+  const shippingCost =
+  subtotal > 600
+    ? shippingMethod === "next-day"
+      ? 5
+      : 0
+    : shippingMethod === "next-day"
+      ? 25
+      : 20;
 
   localStorage.setItem("shippingMethod", shippingMethod);
   localStorage.setItem("shippingCost", shippingCost);
 
-   const [showVoucher, setShowVoucher] = useState(false);
-   const [voucherCode, setVoucherCode] = useState("");
+  const [showVoucher, setShowVoucher] = useState(false);
+  const [voucherCode, setVoucherCode] = useState("");
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-   function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     navigate("/payment");
   }
